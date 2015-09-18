@@ -1,0 +1,46 @@
+/**
+ * @author NetBusinessAgent
+ * @version 1.0.0
+ */
+
+/**
+ * .liner-information
+ */
+
+.liner-information {
+	background-color: #EAF6F8;
+	border: 1px solid #52CAF0;
+	border-radius: 5px;
+	margin: 0.83em 20px 0.83em 0;
+	padding: 10px 15px;
+}
+
+.liner-information ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.liner-information ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * liner-header-image
+ */
+
+#liner-header-image img {
+	height: auto;
+	max-width: 100%;
+}
+
+.liner-header-image-hide {
+	display: none;
+}
+
+.liner-header-image-show {
+	display: inline;
+}
+
