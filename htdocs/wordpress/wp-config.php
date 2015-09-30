@@ -31,7 +31,6 @@ define('DB_PASSWORD', 'wordpress99');
 
 /** MySQL のホスト名 */
 define('DB_HOST', 'baycrews.clfdhhapjwey.ap-northeast-1.rds.amazonaws.com');
-define('DB_HOST_SLAVE', 'baycrews2.clfdhhapjwey.ap-northeast-1.rds.amazonaws.com');
 
 /** データベースのテーブルを作成する際のデータベースのキャラクターセット */
 define('DB_CHARSET', 'utf8');

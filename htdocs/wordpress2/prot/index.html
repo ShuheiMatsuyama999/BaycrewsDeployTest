@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>bcs ヘッダテスト</title>
+<meta name="Description" content="#" />
+<meta name="Keywords" content="#" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/common/css/import.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/common/css/uniform.default.css" />
+<script type="text/javascript" src="/common/js/smartRollover.js"></script>
+<script type="text/javascript" src="/common/js/jquery-1.js"></script>
+<script type="text/javascript" src="/common/js/function.js"></script>
+<script type="text/javascript" src="/common/js/common.js"></script>
+<script type="text/javascript" src="/common/js/jquery-css-transform.js"></script>
+<script type="text/javascript" src="/common/js/jquery-animate-css-rotate-scale.js"></script>
+<script type="text/javascript" src="/common/js/jquery.uniform.js"></script>
+<script type="text/javascript" src="/common/js/jquery.custom_form.js"></script>
+<!--[if IE 6]>
+<script language="JavaScript" type="text/javascript" src="/common/js/DD_belatedPNG_0.0.8a-min.js">
+</script>
+<script>
+		DD_belatedPNG.fix('#page,img,.pngImg');
+</script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" media="screen, print" href="/common/css/header.css" />
+<script type="text/javascript" src="/common/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/common/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/common/js/jquery.set_weather_api.js"></script>
+<script type="text/javascript" src="/common/js/jquery.header_enhancer.js"></script>
+<script type="text/javascript" src="/common/js/jquery.search_keyword.js"></script>
+<script type="text/javascript" src="/common/js/jquery.search_article.js"></script>
+</head>
+<body class="brandpage">
+
+<div id="header_blog_wrp">
+<div id="header_blog">
+
+<div class="title">
+<h1><a href="/"><img src="/common/images/header/blog_logo.png" alt="BAYCREW'S GROUP ： Daily Blog" width="256" height="63" /></a></h1>
+<p><img src="/common/images/header/blog_title.png" alt="What's worm today?" width="114" height="10" /></p>
+</div>
+
+<div id="what_wear">
+<form method="post" action="posttest.php" id="weatherForm">
+
+<div class="form_element">
+<input type="hidden" id="weather-hidden" name="weather" value="fine" />
+<input type="hidden" id="pref-hidden" name="pref" value="tokyo" />
+<input type="hidden" id="temperature-hidden" name="temperature" value="ex_cold" />
+<input type="hidden" id="style-hidden" name="style" value="style_01" />
+<!-- / .form_element --></div>
+
+<h2><img src="/common/images/header/h2_what_wear.png" alt="今日、なに着る？" width="82" height="63" /></h2>
+
+<div id="date_info">
+<div class="col_left">
+<p class="day"><span class="num_0">0</span><span class="num_0">0</span>
+<span class="mark_slash">/</span>
+<span class="num_0">0</span><span class="num_0">0</span>
+<span class="day_sun">Sun.</span></p>
+<p class="temperature"><span id="ajaxMaxC"><span class="mark_minus">-</span><span class="num_0">0</span><span class="num_0">0</span></span><span class="mark_degree">°</span>
+<span class="mark_slash">/</span>
+<span id="ajaxMinC"><span class="mark_minus">-</span><span class="num_0">0</span><span class="num_0">0</span></span><span class="mark_degree">°</span></p>
+<p class="place text_upper"><span id="ajaxPref">tokyo, Japan</span></p>
+<!-- / .col_left --></div>
+<div class="col_right">
+<ul id="list_weather">
+<li class="item_01"><img src="/common/images/header/img_weather_01.png" alt="晴れ" width="96" height="64" /></li>
+<li class="item_02 active"><img src="/common/images/header/img_weather_02.png" alt="くもり" width="96" height="64" /></li>
+<li class="item_03"><img src="/common/images/header/img_weather_03.png" alt="晴れ後くもり" width="96" height="64" /></li>
+<li class="item_04"><img src="/common/images/header/img_weather_04.png" alt="晴れ後雪" width="96" height="64" /></li>
+<li class="item_05"><img src="/common/images/header/img_weather_05.png" alt="雨" width="96" height="64" /></li>
+<li class="item_06"><img src="/common/images/header/img_weather_06.png" alt="晴れ後雨" width="96" height="64" /></li>
+<li class="item_07"><img src="/common/images/header/img_weather_07.png" alt="雷雨" width="96" height="64" /></li>
+<li class="item_08"><img src="/common/images/header/img_weather_08.png" alt="雪" width="96" height="64" /></li>
+</ul>
+<ul class="nav_list">
+<li><a href="#" id="prevWeather">＜前</a></li>
+<li><a href="#" id="nextWeather">次＞</a></li>
+</ul>
+<!-- / .col_right --></div>
+<p class="clear">Powered by World Weather Online</p>
+<!-- / #date_info --></div>
+
+<div id="block_feeling" class="select_type">
+<p class="current"><a href="#" id="ajaxTemperature"><span class="ex_cold">とても寒い</span></a></p>
+<ul class="list_item">
+<li class="active"><a href="#" class="ex_cold">とても寒い</a></li>
+<li><a href="#" class="cold">寒い</a></li>
+<li><a href="#" class="cool">涼しい</a></li>
+<li><a href="#" class="warm">暖かい</a></li>
+<li><a href="#" class="hot">暑い</a></li>
+<li><a href="#" class="heat">とても暑い</a></li>
+</ul>
+<!-- / #block_feeling --></div>
+
+<div id="block_style" class="select_type">
+<p class="current"><a href="#" id="ajaxStyle"><span class="style_01">style_01</span></a></p>
+<ul class="list_item">
+<li class="active"><a href="#" class="style_01">style_01</a></li>
+<li><a href="#" class="style_02">style_02</a></li>
+<li><a href="#" class="style_03">style_03</a></li>
+<li><a href="#" class="style_04">style_04</a></li>
+<li><a href="#" class="style_05">style_05</a></li>
+<li><a href="#" class="style_06">style_06</a></li>
+</ul>
+<!-- / #block_style --></div>
+
+<ul class="search_from">
+<li class="checked"><label class="search_daily" for="search_daily1"><input name="search_from1" type="radio" id="search_daily1" value="DAILY BLOGから探す" checked="checked" />DAILY BLOGから探す</label></li>
+<li class="disabled"><label class="this_brand" for="this_brand1"><input name="search_from1" type="radio" disabled="disabled" id="this_brand1" value="このブランドから探す" />このブランドから探す</label></li>
+</ul>
+
+<p class="bt_submit"><a href="#" id="weather_submit"><img src="/common/images/header/bt_find_off.png" alt="Find!" width="67" height="36" /></a></p>
+
+</form>
+<!-- / #what_wear --></div>
+
+<div id="functionArea" class="clearfix">
+
+<p class="setup"><a href="#"><img src="/common/images/header/bt_setting_off.png" alt="設定" width="47" height="19" /></a></p>
+
+<div id="search_keyword">
+<form method="post" action="posttest.php" id="keywordForm">
+
+<ul class="search_from">
+<li class="checked"><label class="search_daily" for="search_daily2"><input name="search_from2" type="radio" id="search_daily2" value="全体検索" checked="checked" />全体検索</label></li>
+<li class="disabled"><label class="this_brand" for="this_brand2"><input name="search_from2" type="radio" disabled="disabled" id="this_brand2" value="ブランド内検索" />ブランド内検索</label></li>
+</ul>
+
+<p class="inputArea"><input type="text" name="word" id="search" size="50" value="DAILY BLOGから検索" /><a href="#" id="keyword_submit"><img src="/common/images/header/bt_search_off.png" class="submitButton pngImg" alt="検索" /></a></p>
+</form>
+<!-- / #search_keyword --></div>
+
+<p class="search_article"><a href="#search_article_box" id="search_article_open_bt">記事を探す</a></p>
+
+<!-- / #functionArea --></div>
+
+<div id="search_article_box">
+<form method="post" action="posttest.php" id="articleForm">
+<div id="searchList_category">
+<ul class="list_check list_inline clearfix text_upper">
+<li><label for="category_all"><input id="category_all" type="checkbox" name="category[]" value="全て" />全て</label></li>
+<li><label for="category_01"><input id="category_01" type="checkbox" name="category[]" value="Men" />Men</label></li>
+<li><label for="category_02"><input id="category_02" type="checkbox" name="category[]" value="Women" />Women</label></li>
+<li><label for="category_03"><input id="category_03" type="checkbox" name="category[]" value="Furniture" />Furniture</label></li>
+<li><label for="category_04"><input id="category_04" type="checkbox" name="category[]" value="Food" />Food</label></li>
+</ul>
+<!-- / #searchList_category --></div>
+
+<div id="searchList_brand">
+<table border="1" class="list_check">
+<tr><th colspan="3" scope="col"><img src="/common/images/header/h_search_article_01.png" alt="ブランド" width="66" height="17" /></th>
+</tr>
+
+<tr>
+<td><label for="brand_all"><input id="brand_all" type="checkbox" name="brand[]" value="全て" />全て</label></td>
+<td><label for="brand_01"><input id="brand_01" type="checkbox" name="brand[]" value="JOURNAL STANDARD MEN'S" />JOURNAL STANDARD MEN'S</label></td>
+<td><label for="brand_02"><input id="brand_02" type="checkbox" name="brand[]" value="JOURNAL STANDARD LADY'S" />JOURNAL STANDARD LADY'S</label></td>
+</tr>
+<tr>
+<td><label for="brand_03"><input id="brand_03" type="checkbox" name="brand[]" value="journal standard luxe" />journal standard luxe</label></td>
+<td><label for="brand_04"><input id="brand_04" type="checkbox" name="brand[]" value="journal standard L'essage" />journal standard L'essage</label></td>
+<td><label for="brand_05"><input id="brand_05" type="checkbox" name="brand[]" value="JOURNAL STANDARD relume MEN'S" />JOURNAL STANDARD relume MEN'S</label></td>
+</tr>
+<tr>
+<td><label for="brand_06"><input id="brand_06" type="checkbox" name="brand[]" value="JOURNAL STANDARD relume LADY'S" />JOURNAL STANDARD relume LADY'S</label></td>
+<td><label for="brand_07"><input id="brand_07" type="checkbox" name="brand[]" value="J.S.Homestead" />J.S.Homestead</label></td>
+<td><label for="brand_08"><input id="brand_08" type="checkbox" name="brand[]" value="Vulture JOURNAL STANDARD" />Vulture JOURNAL STANDARD</label></td>
+</tr>
+<tr>
+<td><label for="brand_09"><input id="brand_09" type="checkbox" name="brand[]" value="Spick and Span" />Spick and Span</label></td>
+<td><label for="brand_10"><input id="brand_10" type="checkbox" name="brand[]" value="FRAMeWORK" />FRAMeWORK</label></td>
+<td><label for="brand_11"><input id="brand_11" type="checkbox" name="brand[]" value="Noble" />Noble</label></td>
+</tr>
+<tr>
+<td><label for="brand_12"><input id="brand_12" type="checkbox" name="brand[]" value="IENA" />IENA</label></td>
+<td><label for="brand_13"><input id="brand_13" type="checkbox" name="brand[]" value="IENA SLOBE" />IENA SLOBE</label></td>
+<td><label for="brand_14"><input id="brand_14" type="checkbox" name="brand[]" value="EDIFICE" />EDIFICE</label></td>
+</tr>
+<tr>
+<td><label for="brand_15"><input id="brand_15" type="checkbox" name="brand[]" value="417 by EDIFICE" />417 by EDIFICE</label></td>
+<td><label for="brand_16"><input id="brand_16" type="checkbox" name="brand[]" value="DEUXIEME CLASSE" />DEUXIEME CLASSE</label></td>
+<td><label for="brand_17"><input id="brand_17" type="checkbox" name="brand[]" value="L'Appartement DEUXIEME CLASSE" />L'Appartement DEUXIEME CLASSE</label></td>
+</tr>
+<tr>
+<td><label for="brand_18"><input id="brand_18" type="checkbox" name="brand[]" value="EDIT. FOR LULU" />EDIT. FOR LULU</label></td>
+<td><label for="brand_19"><input id="brand_19" type="checkbox" name="brand[]" value="FIGARO Paris" />FIGARO Paris</label></td>
+<td><label for="brand_20"><input id="brand_20" type="checkbox" name="brand[]" value="La TOTALITE" />La TOTALITE</label></td>
+</tr>
+<tr>
+<td><label for="brand_21"><input id="brand_21" type="checkbox" name="brand[]" value="LIMITLESS LUXURY" />LIMITLESS LUXURY</label></td>
+<td><label for="brand_22"><input id="brand_22" type="checkbox" name="brand[]" value="B.C STOCK" />B.C STOCK</label></td>
+<td><label for="brand_23"><input id="brand_23" type="checkbox" name="brand[]" value="ivory court" />ivory court</label></td>
+</tr>
+<tr>
+<td><label for="brand_24"><input id="brand_24" type="checkbox" name="brand[]" value="HIROB" />HIROB</label></td>
+<td><label for="brand_25"><input id="brand_25" type="checkbox" name="brand[]" value="Le Talon" />Le Talon</label></td>
+<td><label for="brand_26"><input id="brand_26" type="checkbox" name="brand[]" value="ACME FURNITURE" />ACME FURNITURE</label></td>
+</tr>
+<tr>
+<td><label for="brand_27"><input id="brand_27" type="checkbox" name="brand[]" value="journal standard Furniture" />journal standard Furniture</label></td>
+<td><label for="brand_28"><input id="brand_28" type="checkbox" name="brand[]" value="J.S. BURGERS CAFE" />J.S. BURGERS CAFE</label></td>
+<td><label for="brand_29"><input id="brand_29" type="checkbox" name="brand[]" value="j.s. pancake cafe" />j.s. pancake cafe</label></td>
+</tr>
+<tr>
+<td><label for="brand_30"><input id="brand_30" type="checkbox" name="brand[]" value="JOURNAL STANDARD Cafe" />JOURNAL STANDARD Cafe</label></td>
+<td><label for="brand_31"><input id="brand_31" type="checkbox" name="brand[]" value="神南カリー" />神南カリー</label></td>
+<td><label for="brand_32"><input id="brand_32" type="checkbox" name="brand[]" value="BODY by VITAL" />BODY by VITAL</label></td>
+</tr>
+<tr>
+<td><label for="brand_33"><input id="brand_33" type="checkbox" name="brand[]" value="B'Reform Works Studio" />B'Reform Works Studio</label></td>
+<td><label for="brand_34"><input id="brand_34" type="checkbox" name="brand[]" value="cafe de la ville" />cafe de la ville</label></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<!-- / #searchList_brand --></div>
+
+<div id="searchList_local">
+<table border="1" class="list_check">
+<tr>
+<th scope="col"><img src="/common/images/header/h_search_article_02.png" alt="地域" width="36" height="17" /></th>
+</tr>
+<tr>
+<td><ul class="list_inline clearfix text_upper">
+<li><label for="local_all"><input id="local_all" type="checkbox" name="local[]" value="全て" />全て</label></li>
+<li><label for="local_01"><input id="local_01" type="checkbox" name="local[]" value="北海道・東北" />北海道・東北</label></li>
+<li><label for="local_02"><input id="local_02" type="checkbox" name="local[]" value="東海・北陸" />東海・北陸</label></li>
+<li><label for="local_03"><input id="local_03" type="checkbox" name="local[]" value="関西" />関西</label></li>
+<li><label for="local_04"><input id="local_04" type="checkbox" name="local[]" value="中国・四国・九州" />中国・四国・九州</label></li>
+<li><label for="local_05"><input id="local_05" type="checkbox" name="local[]" value="海外" />海外</label></li>
+</ul></td>
+</tr>
+</table>
+<!-- / #searchList_local --></div>
+
+<p class="bt_submit"><a href="#" id="article_submit"><img src="/common/images/header/bt_find_02_off.png" alt="Find!" width="160" height="31" /></a></p>
+
+<p class="bt_close"><a href="#" id="search_article_close_bt"><img src="/common/images/header/bt_close.png" alt="閉じる" width="31" height="31" /></a></p>
+
+</form>
+<!-- / #search_article_box --></div>
+
+<!-- / #header_blog --></div>
+<!-- / #header_blog_wrp --></div>
+
+
+
+
+
+<div id="contents">
+<div style="padding:6px 12px;height:550px;background:#333;vertical-align:middle;color:#fff;font-size:28px;">コンテンツ</div>
+<!-- / #contents --></div>
+
+</body>
+</html>

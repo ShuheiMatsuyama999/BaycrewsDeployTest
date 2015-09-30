@@ -1,0 +1,51 @@
+
+.detail .contents {
+	background: url(../images/js-homestead/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #be8132;
+	color: #be8132;
+	background: url(../images/js-homestead/dot_x.jpg) bottom left repeat-x;
+	padding: 10px 10px 10px 15px;
+	margin:0 10px;
+}
+
+/*ショップ詳細*/
+.hiLight .shopDetail {
+	border: 2px solid #be8132;
+}
+
+.hiLight .shopDetail h5 {
+	color: white;
+	background: #be8132;
+}
+
+.hiLight .shopDetail h5 a {
+	color: white;
+}
+
+
+.hiLight .shopDetail p.shopMoreLink {
+	background: url(../images/js-homestead/dot_x.gif) top left repeat-x;
+}
+
+/*.hiLight .shopDetail p.shopMoreLink span,.hiLight .shopDetail p.otherShops span {
+	background: url(../images/js-homestead/arrow_02.png) left center no-repeat;
+	-webkit-background-size: 11px auto;
+	background-size:11px auto;
+}
+
+.hiLight .shopDetail p.shopMoreLink span a,.hiLight .shopDetail p.otherShops span a {
+	color: #62101a;
+}*/
+
+/*詳細リンク*/
+.inner p.wp-caption-text a.blank{
+color: #62101a;
+background: url(../images/js-homestead/point_blank.jpg) left center no-repeat;
+}

@@ -1,0 +1,22 @@
+.contents .news a { color:#76623f!important; }
+.detail .contents {
+	background: url(../images/js-relume-l/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #76623f;
+	color: #76623f;
+	background: url(../images/js-relume-l/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #76623f;
+background: url(../images/js-relume-l/point_blank.jpg) left center no-repeat;
+}

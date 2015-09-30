@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{
+	color:#3872C6;
+}
+a:hover{
+	color:#739BD6;
+}
+/* body background
+------------------------------ */
+body.blog{
+	background:url(../images/inner/cafe-de-la-ville/cat_bg.jpg) top left repeat;
+}
+
+/* sidenav
+------------------------------ */
+.links ul li{
+	background:url(../images/inner/cafe-de-la-ville/dot_x.jpg) bottom left repeat-x;
+}
+#sideNav ul li.blank span{ background:url(../images/inner/cafe-de-la-ville/arrow_blank.jpg) 0 2px no-repeat; }
+#sideNav ul li span{ background:url(../images/inner/cafe-de-la-ville/arrow_02.jpg) 0 2px no-repeat; }
+#sideNav ul li.list a{ background:url(../images/inner/cafe-de-la-ville/arrow_01.jpg) 0 4px no-repeat; }
+
+/* mainContents
+------------------------------ */
+.pageComment .commentJump span{ background: url(../images/inner/cafe-de-la-ville/arrow_pagedown.jpg) 0 3px no-repeat; }
+.mainContents .articleSubInfo .shopDetail p.shopMoreLink {
+	background: url(../images/inner/cafe-de-la-ville/dot_x.jpg) top left repeat-x;
+}
+.articleSubInfo .memoListWrapper h4{
+	background: none;
+}
+.mainContents .article h2{
+	color:#3872C6;
+	border-top:2px solid #3872C6;
+	background:url(../images/inner/cafe-de-la-ville/dot_x.jpg) bottom left repeat-x;
+}
+.mainContents .articleInner{
+	/*background:url(../images/inner/cafe-de-la-ville/dot_x.jpg) bottom left repeat-x;*/
+}
+.mainContents .articleInner p a.blank{
+	background:url(../images/inner/cafe-de-la-ville/point_blank.jpg) 0 7px no-repeat;
+}
+.mainContents .articleInner .articleImage{
+	background:url(../images/inner/cafe-de-la-ville/img_bg.gif) top left repeat;
+}
+.mainContents .articleInner img{
+	background:url(../images/inner/cafe-de-la-ville/img_bg.gif) top left repeat;
+	padding: 5px;
+}
+.mainContents .articleInner .linkList li{
+	background:url(../images/inner/cafe-de-la-ville/arrow_02.jpg) 0 1px no-repeat;
+}
+.mainContents .articleInner .linkList li.blank{
+	background:url(../images/inner/cafe-de-la-ville/arrow_blank.jpg) 0 1px no-repeat;
+}
+.mainContents .articleInner .articleTags{
+	background:#ebf1f9;
+}
+.mainContents .articleSubInfo .memo dl dd .memoText ul li,
+.shoptop .memo dl dd .memoText ul li{
+	background:url(../images/inner/cafe-de-la-ville/arrow_02.jpg) 0 1px no-repeat;
+}
+.mainContents .articleSubInfo .shopDetail,
+.shoptop .shopDetail{
+	border:2px solid #3872C6;
+}
+.mainContents .articleSubInfo .shopDetail h5,
+.shoptop .shopDetail h5{
+	color:#fff;
+	background:#3872C6;
+}
+.mainContents .articleSubInfo .shopDetail h5 span,
+.shoptop .shopDetail h5 span{ background:url(../images/inner/cafe-de-la-ville/arrow_white.png) 0 5px no-repeat; }
+.mainContents .innerPageTop span{ background:url(../images/inner/cafe-de-la-ville/arrow_pagetop.jpg) center right no-repeat; }
+.mainContents .pageNation ul li.pagePrev{ background:url(../images/inner/cafe-de-la-ville/arrow_prev.jpg) left 3px no-repeat; }
+.mainContents .pageNation ul li.pageNext{ background:url(../images/inner/cafe-de-la-ville/arrow_02.jpg) right 3px no-repeat; }
+.mainContents .articleSubInfo .shopDetail p.shopMoreLink span,
+.shoptop .shopDetail p.shopMoreLink span{ background:url(../images/inner/cafe-de-la-ville/arrow_02.jpg) 0 3px no-repeat; }
+
+/* Firefox 3 */
+.mainContents .articleSubInfo .shopDetail h5 span,
+.shoptop .shopDetail h5 span, x:-moz-broken, x:last-of-type  { background:url(../images/inner/cafe-de-la-ville/arrow_white.png) 0 3px no-repeat; }
+
+/* right nav
+------------------------------ */
+#subContents #recent ul li a,
+#subContents #archive ul li a{
+	background:url(../images/inner/cafe-de-la-ville/arrow_01.jpg) 0 4px no-repeat;
+}
+
+/* archive */
+.archive .mainContents .article h2 {
+color: #3872C6;
+border: none!important;
+background: url(../images/inner/cafe-de-la-ville/dot_x.jpg) bottom left repeat-x;
+}
+
+.archive .mainContents .article .archiveList{
+background: url(../images/inner/cafe-de-la-ville/dot_x.jpg) bottom left repeat-x;
+}
+
+/*disqus login*/
+#dsq-reply #dsq-account-dropdown a{
+background: url(../images/inner/cafe-de-la-ville/btn_login.jpg) no-repeat;
+}
+
+/*shop list*/
+.mainContents #shpoItemList dl dd span{
+background: url(../images/inner/cafe-de-la-ville/arrow_02.jpg) left 14% no-repeat;
+}
+.memoListHover,.memoListHover a{ color: #739BD6!important; }
+
+/*brand top comment*/
+div.commentjump{ background: url(../images/inner/cafe-de-la-ville/dot_x.jpg) top left repeat-x; }
+div.commentjump span{ background: url(../images/inner/cafe-de-la-ville/arrow_02.jpg) 0 3px no-repeat; }

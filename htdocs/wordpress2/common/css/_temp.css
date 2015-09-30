@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*
+下記のスタイルをコピー・ペーストしてご利用ください。
+*/
+
+body { position: relative; }
+
+#result_search { position: fixed; bottom: 0; z-index: 3; height: 150px; width: 100%; overflow: hidden; }
+
+#result_search .functionArea { padding: 0 35px 0 55px; height: 30px; overflow: hidden; line-height: 30px; background-color: #828282; color: #fff; }
+#result_search .functionArea img { vertical-align: top; }
+
+#result_search .functionArea .info { float: left; }
+#result_search .functionArea .info strong { font-weight: bolder; }
+
+#result_search .functionArea ul { float: right; padding-top: 4px; }
+#result_search .functionArea li { float: left; }
+#result_search .functionArea .bt_toggle a { float: left; padding-top: 26px; height: 0; width: 90px; overflow: hidden; background: url(/common/images/result_search_bt_function.png); }
+#result_search .functionArea .bt_toggle a:hover { background-position: 0 -26px; }
+#result_search .functionArea .bt_toggle a.active { background-position: 0 -52px; }
+#result_search .functionArea .bt_toggle a.active:hover { background-position: 0 -78px; }
+
+#result_search .carousel { position: relative; height: 120px; overflow: hidden; background-color: #eceae2; }
+
+/*#result_search .list_article { display: inline; float: left; margin-right: -280px; padding-left: 55px; }*/
+#result_search .list_article { display: inline; float: left; margin-right: -280px; margin-left: 55px; height: 112px; overflow: hidden;}
+#result_search .list_article li { float: left; }
+#result_search .list_article li{ display: inline; float: left; margin: 10px 10px 0 0;
+	width: 270px; height: 100px; background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 0 3px #ccc;
+	behavior: url(/common/css/PIE.htc); }
+#result_search .list_article li a{ color:#4a4a4a; }
+#result_search .list_article li a:hover{ color:#a0a0a0; }
+#result_search .list_article li img { float: left; margin-right: 8px;
+	border-radius: 6px 0 0 6px;
+	behavior: url(/common/css/PIE.htc); }
+#result_search .list_article li a.over img { opacity:0.70; filter:alpha(opacity=70); -ms-filter:"alpha(opacity=70)"; }
+#result_search .list_article li .date,
+#result_search .list_article li .title,
+#result_search .list_article li .lead,
+#result_search .list_article li .info { display: block; margin: 9px 7px 0 0;
+	line-height: 1.29; font-size: 9px; }
+#result_search .list_article li .info { display: block; margin: 9px 7px 0 0;
+	line-height: 1.29; font-size: 9px; }
+#result_search .list_article li .title { margin-top: 2px; margin-bottom: 10px; font-size: 11px; }
+#result_search .list_article li span.img_loading{ position: absolute; z-index: 5;}
+#result_search .list_article li.current span.current_bg{ position: absolute; margin-top: -8px; z-index: 5; padding: 0 !important; display: none;}
+#result_search .list_article li.current span.current_bg img {opacity: 1 !important;filter:alpha(opacity=100) !important; -ms-filter:"alpha(opacity=100)" !important;}
+#result_search .list_article li.current { position: relative;}
+#result_search .list_article li.current a img{ position: absolute;}
+#result_search .list_article li.current > span{ padding-left: 92px; }
+#result_search .list_article li.loading_disco img{position: absolute; opacity: 1 !important;filter:alpha(opacity=100) !important; -ms-filter:"alpha(opacity=100)" !important;}
+#result_search .list_article li.loading_disco {-webkit-filter: grayscale(0) !important; }
+
+#result_search .nav { float: left; }
+#result_search .nav li { position: absolute; top: 0; }
+#result_search .nav .back { left: 0; z-index: 99;}
+#result_search .nav .next { right: 0; z-index: 99;}
+
+
+/*visited
+#result_search .list_article li.visited,#result_search .list_article li.visited a{ color:#a4a4a4!important }*/
+#result_search .list_article li.visited{ -webkit-filter: grayscale(); }
+#result_search .list_article li.visited img{opacity: 0.4;filter:alpha(opacity=40); -ms-filter:"alpha(opacity=40)"; }
+
+
+/*visited hover
+#result_search .list_article li.listhover,#result_search .list_article li.listhover a:hover{ color:#F00!important }
+#result_search .list_article li.listhover img{ -webkit-filter: grayscale(1)!important; }
+#result_search .list_article li.listhover{ -webkit-filter: grayscale(0); }*/

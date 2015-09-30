@@ -1,0 +1,259 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+	デフォルトスタイル
+------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-text-size-adjust: none;
+	font-size: 1em;
+	color: #333;
+}
+/*sp strong */
+strong{
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-text-size-adjust: none;
+	font-size: 1em;
+}
+
+
+body,
+table,
+input, textarea, select, option {
+	font-family: HiraKakuProN-W3;
+	font-size: 1em;
+	
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
+/*------------------------------------------------------------
+	レイアウト
+------------------------------------------------------------*/
+body {
+	line-height: 1.5;
+}
+
+header .pc {
+	position: relative;
+	background-color: #828282;
+	padding: 10px 10px 13px 10px;
+}
+header .pc p {
+	text-align: center;
+	line-height: 1;
+}
+header .pc p a {
+	color: #fff;
+	font-size: 12px;
+	font-weight: normal;
+}
+header .pc .btn_close {
+	position: absolute;
+	top: 10px;
+	right: 10px;	
+}
+
+div.pc_footer{
+	padding: 11px 0px;
+	width: 100%;
+	background-color: #828282;
+}
+div.pc_footer p{
+	text-align: center;
+	font-size: 12px;
+	color: #ffffff;
+}
+div.pc_footer p a{
+	color: #ffffff;
+}
+
+header .bottom {
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #E6E6E6;
+	padding: 5px 0 5px 0;
+}
+header .bottom .search {
+	width: 28px;
+	height: 25px;
+	margin: 0 4px 0 0;
+	text-align: center;
+	float: right;
+}
+header .bottom .report {
+	height: 25px;
+	text-align: center;
+	margin: 0 2px 0 0;
+	float: right;
+}
+header .bottom .weather_btn {
+	height: 25px;
+	text-align: center;
+	margin: 0 2px 0 0;
+	float: right;
+}
+header .bottom .dot {
+	width: 1px;
+	height: 15px;
+	margin: 5px 1px 0 1px;
+	float: right;
+	border-left: 1px dotted #7f7f7f;
+	text-indent: -99999px;
+}
+
+footer {
+	position: relative;
+	overflow: hidden;
+	background-color: #333;
+}
+footer ul {
+	list-style-position: inside;
+	line-height: 1;
+	padding-left:20px;
+/*	text-align: center;*/
+}
+footer ul:first-child {
+	margin-top: 10px;
+}
+footer ul li {
+	font-size: 11px;
+	display: inline;
+	color: #fff;
+}
+footer ul li a {
+	font-size: 11px;
+	color: #fff;
+	text-decoration: none;
+}
+body footer .copy {
+	font-size: 10px;
+	/*padding: 10px 20px 15px 20px;*/
+	padding: 10px 20px 35px 20px;
+	color: #fff;
+}
+.fixedBanner img {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0; 
+	z-index: 1;
+}
+footer ul.snsLinks {
+	padding: 0 20px;
+}
+footer ul.snsLinksFirst {
+	padding-top: 5px;
+}
+
+
+footer ul.snsLinks li.twitter a {
+	color: #5abadb;
+}
+footer ul.snsLinks li.facebook a {
+	color: #3a6eec;
+}
+footer ul.snsLinks li.google a {
+	color: #d3522f;
+}
+footer ul.snsLinks li.mixi a {
+	color: #d8af39;
+}
+footer ul.snsLinks li.instagram a {
+	color: #2d7292;
+}
+
+/*------------------------------------------------------------
+	header popup
+------------------------------------------------------------*/
+.weather_popup {
+	background: url(/sp/images/common/sp_weather_popup_bg_bottom.png) left bottom no-repeat;
+	padding-bottom: 9px;
+	width: 309px;
+	position: absolute;
+	z-index: 9999;
+	right: 5px;
+}
+
+.weather_popup_top{
+	background: url(/sp/images/common/sp_weather_popup_bg_top.png) left top no-repeat;
+	padding-top: 14px;
+}
+
+.weather_popup_mid{
+	background: url(/sp/images/common/sp_weather_popup_bg_mid.png) left top repeat-y;
+	padding: 9px 18px;
+}
+
+.weather_popup_mid p.w_close {
+	float: right;
+	height: 22px;
+	width: 22px;
+}
+
+.weather_popup_mid p.w_close a{
+	display: block;
+	height: 22px;
+	width: 22px;
+}
+
+.weather_popup_mid p.w_txt{
+	color: #5a5a5a;
+	font-size: 16px;
+	float: left;
+	line-height: 22px;
+	font-weight: bold;
+}

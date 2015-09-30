@@ -1,0 +1,22 @@
+.contents .news a { color:#877d6e!important; }
+.detail .contents {
+	background: url(../images/noble/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #f4dcc2;
+	color: #f4dcc2;
+	background: url(../images/noble/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #877d6e;
+background: url(../images/noble/point_blank.jpg) left center no-repeat;
+}

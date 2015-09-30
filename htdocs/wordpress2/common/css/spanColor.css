@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.block .blockInner dl dd span.jsl a{
+	color:#594a3b!important;
+}
+.block .blockInner dl dd span.iena a{
+	color:#93c0fa!important;
+}
+.block .blockInner dl dd span.press a{
+	color:#002282!important;
+}
+.block .blockInner dl dd span.edifice a{
+	color:#142074!important;
+}
+.block .blockInner dl dd span.noble a{
+	color:#c9a175!important;
+}
+.block .blockInner dl dd span.hirob a{
+	color:#d6b43c!important;
+}
+.block .blockInner dl dd span.edit_fl a{
+	color:#003559!important;
+}
+.block .blockInner dl dd span.ladc a{
+	color:#003559!important;
+}

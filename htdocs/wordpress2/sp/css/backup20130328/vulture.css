@@ -1,0 +1,22 @@
+.contents .news a { color:#087f66!important; }
+.detail .contents {
+	background: url(../images/vulture/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #109d86;
+	color: #109d86;
+	background: url(../images/vulture/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #109d86;
+background: url(../images/vulture/point_blank.jpg) left center no-repeat;
+}

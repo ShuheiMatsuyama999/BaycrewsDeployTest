@@ -1,0 +1,22 @@
+.contents .news a { color:#003559!important; }
+.detail .contents {
+	background: url(../images/editforlulu/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #003559;
+	color: #003559;
+	background: url(../images/editforlulu/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #003559;
+background: url(../images/editforlulu/point_blank.jpg) left center no-repeat;
+}

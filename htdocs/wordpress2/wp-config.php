@@ -21,23 +21,32 @@
 
 // ** MySQL 設定 - こちらの情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define('DB_NAME', 'wordpress');
+define('DB_NAME', 'wordpress2');
 
 /** MySQL データベースのユーザー名 */
-define('DB_USER', 'wordpress');
+define('DB_USER', 'wordpress2');
 
 /** MySQL データベースのパスワード */
 define('DB_PASSWORD', 'wordpress99');
 
 /** MySQL のホスト名 */
 define('DB_HOST', 'baycrews.clfdhhapjwey.ap-northeast-1.rds.amazonaws.com');
-define('DB_HOST_SLAVE', 'baycrews2.clfdhhapjwey.ap-northeast-1.rds.amazonaws.com');
 
 /** データベースのテーブルを作成する際のデータベースのキャラクターセット */
 define('DB_CHARSET', 'utf8');
 
 /** データベースの照合順序 (ほとんどの場合変更する必要はありません) */
 define('DB_COLLATE', '');
+
+/** マルチサイト設定 */
+define ('WP_ALLOW_MULTISITE', true);
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', false );
+$base = '/';
+define( 'DOMAIN_CURRENT_SITE', 'blog.baycrews.co.jp' );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
 
 /**#@+
  * 認証用ユニークキー
@@ -48,14 +57,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'HD(+=:Sq=bUy6aES7neSzHSOzYDk6+GM/@=w@gn]f}T@THpKgU.eS;H`+=8k|obn');
+define('SECURE_AUTH_KEY',  '5:snfn^?N|ZjXCU-tWwYM8`e6N$sgorpYc765-lfB(TntONI&2|@oQ]f|jbN7vQc');
+define('LOGGED_IN_KEY',    'eQwo}9gZ/PSUE rJ^(>I9pO`+Uga-*(y,-NMLERk[XCX[|8ly]99@0d|f ,>_]ux');
+define('NONCE_KEY',        'GmQz8.^TrCn=~EOE|?Bu+Xq9$I|&Rq4.qzZEE}r0 {A)Zj||)KCP#lk%qR+yckZ&');
+define('AUTH_SALT',        'ig{~[R|9rdzKvgX|}VO-BCCp6|wxw}xR*%lVWltbUqsj?%f%5He/r}55+SzX=Y=U');
+define('SECURE_AUTH_SALT', 'nQ|b^Z|bMQgov-<|^dLF+6L|hsTC5n}cd1C/ x]yL1hVg~03bS#OmuQCqVY/$XXZ');
+define('LOGGED_IN_SALT',   'Q0|UDx9^el7icbsmi{E7!z8B8SM7x}$[5-P/1$j1ro,Z8!3IOI`3MYs-bBX8^K>e');
+define('NONCE_SALT',       '`5/%U ZBwb~zzLMlsz%{9kJ|{T8B_3:uL/p-- .C(p5RBY[U.#xv_Pq<u/  cV[i');
 
 /**#@-*/
 
@@ -83,12 +92,16 @@ define('WPLANG', 'ja');
  * テーマおよびプラグインの開発者には、その開発環境においてこの WP_DEBUG を使用することを強く推奨します。
  */
 define('WP_DEBUG', false);
+//define('WP_DEBUG', true);
 
 /* 編集が必要なのはここまでです ! WordPress でブログをお楽しみください。 */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
+/** W3 Total Cache plugin **/
+define('WP_CACHE', true);
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

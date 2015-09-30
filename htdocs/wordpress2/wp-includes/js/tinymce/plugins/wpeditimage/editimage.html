@@ -12,6 +12,22 @@
 <script type="text/javascript">
 if ( 'rtl' == tinyMCEPopup.editor.getParam('directionality','') )
 	document.write('<link rel="stylesheet" href="css/editimage-rtl.css?ver=3223" type="text/css" media="all" />');
+
+function brInsert() {
+	var str = "{br}";
+	var elm = document.getElementById("img_cap");
+	elm.focus();
+	if (undefined !== window.execScript) {
+		var selection = document.selection.createRange();
+		selection.text = selection.text + str;
+	}else{
+		var s = elm.value;
+		var p = elm.selectionStart;
+		var np = p + str.length;
+		elm.value = s.substr(0, p) + str + s.substr(p);
+		elm.setSelectionRange(np, np);
+	}
+}
 </script>
 <base target="_self" />
 </head>
@@ -99,11 +115,13 @@ if ( 'rtl' == tinyMCEPopup.editor.getParam('directionality','') )
 		<tr id="cap_field">
 			<th valign="top" scope="row" class="label">
 				<label for="img_cap">
-				<span class="alignleft">{#wpeditimage.caption}</span>
+				<!--span class="alignleft">{#wpeditimage.caption}</span-->
+				<span class="alignleft">クレジット</span>
 				</label>
 			</th>
 			<td class="field">
-				<input type="text" id="img_cap" name="img_cap" value="" size="60" />
+			    <input id="img_cap" name="img_cap" size="55" /><input type="button" onclick="brInsert()" value="改行" /><br />
+			    改行を取り消すには、{br}を削除してください。
 			</td>
 		</tr>
 

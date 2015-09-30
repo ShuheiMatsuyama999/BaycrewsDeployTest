@@ -1,0 +1,22 @@
+.contents .news a { color:#65363a!important; }
+.detail .contents {
+	background: url(../images/js-lessage/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #65363a;
+	color: #65363a;
+	background: url(../images/js-lessage/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #65363a;
+background: url(../images/js-lessage/point_blank.jpg) left center no-repeat;
+}

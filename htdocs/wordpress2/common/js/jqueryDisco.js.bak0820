@@ -1,0 +1,77 @@
+/*
+2012.05.10
+ページ下部のdisco機能
+*/
+
+$(function(){
+	var _sp = 300;//各animateのspeed
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	//
+	//open close　処理
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	$('.bt_toggle').toggle(
+		function() {
+			$("a",this).addClass("active");
+			$("a",this).text('open');
+			$('#result_search').animate({ "bottom" : "-120px" },_sp);
+			//$('#result_search').css('bottom','-120px');
+			
+		},function() {
+			$("a",this).removeClass("active");
+			$("a",this).text('close');
+			$('#result_search').animate({ "bottom" : "0" },_sp);
+		}
+	);
+	
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	//
+	//article処理
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	var liNum = $('ul.list_article > li').size();
+	var posx = 55;//初期値
+	var articleWidth = $('ul.list_article > li').width();
+	var movex = articleWidth;
+	var width = $(window).width();
+	var moveValue = width/articleWidth;
+	
+	moveValueSetFunc();//画面サイズをセット
+	
+	//左右のボタンの処理
+	$('li.next').click(function(){
+		if(posx > (55-(movex*(liNum-1))) && posx > -1625)
+			posx -= articleWidth * moveValue;
+			//$('ul.list_article').css('margin-left',posx+'px');
+			$('ul.list_article').animate({ "margin-left" : posx+'px' },_sp);
+			$('span#debug').text(posx +"//"+ articleWidth * moveValue);
+			
+	});
+	
+	$('li.back').click(function(){
+		if(posx < 55)
+			posx += articleWidth * moveValue;
+			//$('ul.list_article').css('margin-left',posx+'px');
+			$('ul.list_article').animate({ "margin-left" : posx+'px' },_sp);
+	});
+	
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	//
+	//windowサイズに応じてスクロールする数を変更
+	//■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+	//window幅を取得
+	$(window).resize(function(){
+		moveValueSetFunc();
+	});
+	
+	function moveValueSetFunc(){
+		width = $(window).width();
+		moveValue = width/articleWidth;
+		if(moveValue < 3){
+			moveValue = 1;
+		}else{
+			moveValue = Math.floor(moveValue - 1);
+		}
+		$('span#debug').text(width +"//"+ moveValue);
+		
+		return false;
+	}
+});

@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+/* header.css
+==================================================
+	
+	position & display
+	
+	Modules
+	
+	Layout - header_blog
+	
+		what_wear
+			date_info
+			select type * 2 & option
+		
+		functionArea
+			search_keyword
+		
+		search_article_box
+	
+================================================== */
+
+
+
+
+/* position & display
+================================================== */
+
+/* position */
+#header_blog { position: relative; z-index: 2; }
+#what_wear { z-index: 1; }
+#search_article_box { z-index: 0; }
+
+/* display */
+#what_wear .select_type .list_item,
+#search_article_box { display: none; }
+
+
+
+
+/* Modules
+================================================== */
+.text_upper { text-transform: uppercase; }
+
+.col_left { float: left; }
+.col_right { float: right; }
+
+.list_inline li { float: left; margin-right: 1.5em; }
+
+
+
+/* Layout - header_blog
+================================================== */
+#header_blog_wrp { background:#fff; }
+#header_blog { margin: 0 auto; width: 960px; }
+#header_blog img { vertical-align: top; }
+
+#header_blog { }
+#header_blog .title { float: left; padding: 36px 1px 0; width: 256px; text-align: center; }
+#header_blog .title h1 { margin-bottom: 20px; }
+
+
+/* what_wear
+-------------------------------------------------- */
+#what_wear { position: relative; float: right; width: 640px; zoom: 1; }
+#what_wear h2 { position: absolute; left: -69px; height: 73px; }
+
+#what_wear .form_element { position: absolute; }
+
+
+/* inner item's top position
+----------------------------------- */
+#date_info { margin-top: 49px; }
+#what_wear .select_type,
+#what_wear .bt_submit { margin-top: 67px; }
+#what_wear .search_from { margin-top: 43px; }
+
+
+/* date_info
+----------------------------------- */
+#date_info { float: left; width: 193px }
+#date_info .col_left { padding-top: 13px; width: 78px; }
+
+#date_info .day,
+#date_info .temperature,
+#date_info .place { clear: left; zoom: 1; }
+#date_info .day span,
+#date_info .temperature span { float: left; height: 0; overflow: hidden; }
+
+#date_info .day span { margin: 1px 1px 1px 0; padding-top: 8px; width: 7px; background: url(/common/images/header/bg_date_day.png); }
+#date_info .day .mark_slash { background-position: 0 -80px; padding-top: 10px; margin: 0 1px 0 0; }
+#date_info .day .num_1 { background-position: 0 0; width: 5px; }
+#date_info .day .num_2 { background-position: 0 -8px; }
+#date_info .day .num_3 { background-position: 0 -16px; }
+#date_info .day .num_4 { background-position: 0 -24px; }
+#date_info .day .num_5 { background-position: 0 -32px; }
+#date_info .day .num_6 { background-position: 0 -40px; }
+#date_info .day .num_7 { background-position: 0 -48px; }
+#date_info .day .num_8 { background-position: 0 -56px; }
+#date_info .day .num_9 { background-position: 0 -64px; }
+#date_info .day .num_0 { background-position: 0 -72px; }
+#date_info .day .day_sun { background-position: -7px 0; width: 26px; margin-left: 4px; }
+#date_info .day .day_mon { background-position: -7px -8px; width: 27px; margin-left: 4px; }
+#date_info .day .day_tue { background-position: -7px -16px; width: 24px; margin-left: 4px; }
+#date_info .day .day_wed { background-position: -7px -24px; width: 27px; margin-left: 4px; }
+#date_info .day .day_thu { background-position: -7px -32px; width: 25px; margin-left: 4px; }
+#date_info .day .day_fri { background-position: -7px -40px; width: 21px; margin-left: 4px; }
+#date_info .day .day_sat { background-position: -7px -48px; width: 24px; margin-left: 4px; }
+
+#date_info .temperature { padding-top: 6px; }
+#date_info .temperature span { padding-top: 14px; width: 10px; background: url(/common/images/header/bg_date_temperature.png) no-repeat; }
+#date_info .temperature span#ajaxMaxC,
+#date_info .temperature span#ajaxMinC { padding: 0; width: auto; height: auto; overflow: auto; background: 0; }
+#date_info .temperature .num_1 { background-position: 0 0; width: 7px; margin-right: 2px; }
+#date_info .temperature .num_2 { background-position: 0 -14px; }
+#date_info .temperature .num_3 { background-position: 0 -28px; }
+#date_info .temperature .num_4 { background-position: 0 -42px; }
+#date_info .temperature .num_5 { background-position: 0 -56px; }
+#date_info .temperature .num_6 { background-position: 0 -70px; }
+#date_info .temperature .num_7 { background-position: 0 -84px; }
+#date_info .temperature .num_8 { background-position: 0 -98px; }
+#date_info .temperature .num_9 { background-position: 0 -112px; }
+#date_info .temperature .num_0 { background-position: 0 -126px; }
+#date_info .temperature .mark_minus  { background-position: 0 -140px; width: 8px; margin-right: 1px; }
+#date_info .temperature .mark_slash  { background-position: 0 -154px; width: 8px; }
+#date_info .temperature .mark_degree { background-position: 0 -168px; width: 6px; }
+
+#date_info .place { position: relative; z-index: 1; margin-right: -20px; padding-top: 8px; color: #333; font-size: 9px; font-family: Arial, Helvetica, sans-serif; }
+
+#date_info .col_right { position: relative; width: 115px; height: 64px; overflow: hidden; }
+#date_info #list_weather { position: absolute; top: 0; left: 0; width: 96px;  }
+#date_info #list_weather li { display: block; float: left; width: 96px }
+#date_info #list_weather .active { z-index: 1; }
+#date_info .nav_list { position: absolute; top: 0; left: 96px; padding-top: 10px; }
+#date_info a#prevWeather,
+#date_info a#nextWeather { display: block; padding-top: 27px; width: 19px; height: 0; overflow: hidden;
+	background: url(/common/images/header/bg_navWeather.png); }
+#date_info a#prevWeather:hover { background-position: -19px 0; }
+#date_info a#nextWeather { position: absolute; top: 37px; background-position: 0 -27px; }
+#date_info a#nextWeather:hover { background-position: -19px -27px; }
+
+#date_info .clear { padding-top: 4px; color: #b4b4b4; font-size: 9px; font-family: Arial, Helvetica, sans-serif; }
+
+
+/* select type * 2 & option
+----------------------------------- */
+#what_wear .select_type { position: relative; float: left; margin-right: 8px; padding-left: 27px;
+	background: url(/common/images/header/bg_what_wear.png) no-repeat 0 10px; }
+#what_wear .select_type .current a { float: left; padding: 2px 20px 2px 2px; width: 123px; height: 32px;
+	background: url(/common/images/header/bg_selectbox.png) no-repeat; }
+#what_wear .select_type .current a:hover,
+#what_wear .select_type .current a:focus { background-position: 0 -36px ; }
+#what_wear .select_type .current a span { display: block; position: relative; z-index: -1; margin-top: -1px; padding-top: 32px; height: 0; overflow: hidden; cursor: pointer; }
+#what_wear .select_type .list_item { position: absolute; left: 29px; top: 34px; width: 123px;
+	box-shadow: 0 1px 1px #ccc,
+		inset 0 1px 1px #eee;
+	behavior: url(/common/css/PIE.htc); }
+#what_wear .select_type .list_item li a { display: block; padding-top: 32px; height: 0; overflow: hidden; }
+
+/* block_feeling */
+#block_feeling .current span,
+#block_feeling .list_item a { background: url(/common/images/header/bg_select_type_feeling.png); }
+.select_type#block_feeling .ex_cold { background-position: 0 0; }
+.select_type#block_feeling .cold    { background-position: 0 -32px; }
+.select_type#block_feeling .cool    { background-position: 0 -64px; }
+.select_type#block_feeling .warm    { background-position: 0 -96px; }
+.select_type#block_feeling .hot     { background-position: 0 -128px; }
+.select_type#block_feeling .heat    { background-position: 0 -160px; }
+#block_feeling .list_item a.heat { padding-top: 33px; }
+#block_feeling .list_item a.ex_cold:hover { background-position: -123px 0; }
+#block_feeling .list_item a.cold:hover    { background-position: -123px -32px; }
+#block_feeling .list_item a.cool:hover    { background-position: -123px -64px; }
+#block_feeling .list_item a.warm:hover    { background-position: -123px -96px; }
+#block_feeling .list_item a.hot:hover     { background-position: -123px -128px; }
+#block_feeling .list_item a.heat:hover    { background-position: -123px -160px; }
+
+/* block_style */
+#block_style .current span,
+#block_style .list_item a { background: url(/common/images/header/bg_select_type_feeling.png); }
+.select_type#block_style .style_01 { background-position: 0 0; }
+.select_type#block_style .style_02 { background-position: 0 -32px; }
+.select_type#block_style .style_03 { background-position: 0 -64px; }
+.select_type#block_style .style_04 { background-position: 0 -96px; }
+.select_type#block_style .style_05 { background-position: 0 -128px; }
+.select_type#block_style .style_06 { background-position: 0 -160px; }
+#block_style .list_item a.style_06 { padding-top: 33px; }
+#block_style .list_item a.style_01:hover { background-position: -123px 0; }
+#block_style .list_item a.style_02:hover { background-position: -123px -32px; }
+#block_style .list_item a.style_03:hover { background-position: -123px -64px; }
+#block_style .list_item a.style_04:hover { background-position: -123px -96px; }
+#block_style .list_item a.style_05:hover { background-position: -123px -128px; }
+#block_style .list_item a.style_06:hover { background-position: -123px -160px; }
+
+
+#what_wear .search_from { position: absolute; top: 0; right: 0; }
+#what_wear .search_from li { float: left; margin-left: 9px; }
+#what_wear .search_from li label { display: block; height: 11px; overflow: hidden; text-indent: -9999px; cursor: pointer; }
+#what_wear .search_from li.checked label,
+#what_wear .search_from li.disabled label { cursor: default; }
+
+#what_wear .search_from li label.search_daily { width: 133px; background: url(/common/images/header/bg_search_from_daily_01.png); }
+#what_wear .search_from li label.search_daily:hover { background-position: 0 -11px; }
+#what_wear .search_from li.checked label.search_daily { background-position: 0 -22px; }
+
+#what_wear .search_from li label.this_brand { width: 117px; background: url(/common/images/header/bg_search_from_brand_01.png); }
+#what_wear .search_from li label.this_brand:hover { background-position: 0 -11px; }
+#what_wear .search_from li.checked label.this_brand { background-position: 0 -22px; }
+#what_wear .search_from li.disabled label.this_brand { background-position: 0 -33px; }
+
+#what_wear .bt_submit { float: left; padding-left: 20px; background: url(/common/images/header/bg_what_wear.png) no-repeat -200px 10px; }
+* html #what_wear .bt_submit { float: none; padding: 0; background: 0; } /* IE6 */
+* html #what_wear .bt_submit a { float: left; margin-right: -3px; padding-left: 20px;
+	background: url(/common/images/header/bg_what_wear.png) no-repeat -200px 10px; } /* IE6 */
+
+
+/* functionArea
+-------------------------------------------------- */
+#functionArea { clear: both; padding-bottom: 10px; }
+
+#functionArea .setup { float: right; margin-left: 7px; }
+#functionArea .search_article { float: right; }
+#functionArea .search_article a { float: right; margin-right: 10px; padding-top: 19px; width: 92px; height: 0; overflow: hidden;
+	background: url(/common/images/header/bg_search_article.png); }
+#functionArea .search_article a:hover { background-position: 0 -19px; }
+#functionArea .search_article a.active { background-position: 0 -38px; }
+
+
+
+/* search_keyword
+----------------------------------- */
+#search_keyword { float: right; }
+#search_keyword .search_from,
+#search_keyword .search_from li { float: left; }
+#search_keyword .search_from li label { float: left; display: block; height: 19px; overflow: hidden; text-indent: -9999px; cursor: pointer; }
+#search_keyword .search_from li.checked label,
+#search_keyword .search_from li.disabled label { cursor: default; }
+
+#search_keyword .search_from li label.search_daily { width: 52px; background: url(/common/images/header/bg_search_from_daily_02.png); }
+#search_keyword .search_from li label.search_daily:hover { background-position: 0 -19px; }
+#search_keyword .search_from li.checked label.search_daily { background-position: 0 -38px; }
+
+#search_keyword .search_from li label.this_brand { width: 79px; background: url(/common/images/header/bg_search_from_brand_02.png); }
+#search_keyword .search_from li label.this_brand:hover { background-position: 0 -19px; }
+#search_keyword .search_from li.checked label.this_brand { background-position: 0 -38px; }
+#search_keyword .search_from li.disabled label.this_brand { background-position: 0 -57px; }
+
+#search_keyword .inputArea { position: relative; float: left; border: 1px solid #cdcdcd; height: 18px;
+	border-radius: 10px;
+	behavior: url(/common/css/PIE.htc); }
+#search_keyword .inputArea input { border: 0; padding: 2px 6px 1px; width: 138px; background: transparent; color: #aaa; }
+#search_keyword .here input { color: #646464; }
+#search_keyword .inputArea a { position: absolute; top: 0; right: 0; margin: 2px 1px; }
+
+
+
+/* search_article_box
+-------------------------------------------------- */
+#search_article_box { position: relative; position: absolute; left: 100px; padding: 20px 30px 30px; width: 700px;
+	background: url(/common/images/header/bg_search_article_box.png);
+	box-shadow: 0 1px 1px #ccc,
+		inset 0 1px 1px #eee;
+	/behavior: url(/common/css/PIE.htc); }
+#search_article_box .bt_close { position: absolute; top: 0; right: 0; }
+
+#search_article_box .list_check { font-family: Arial, Helvetica, sans-serif; }
+#search_article_box .list_check li { float: left; margin-right: 1.5em; }
+
+#search_article_box .list_check label { margin-left: 10px; padding-left: 16px; background: url(/common/images/header/bg_checkbox.png) no-repeat; cursor: pointer; }
+#search_article_box .list_check .checked label { background-image: url(/common/images/header/bg_checkbox_checked.png); }
+#search_article_box .list_check label input { display: none; }
+
+#search_article_box table.list_check,
+#search_article_box table.list_check th,
+#search_article_box table.list_check td { border: 0; }
+#search_article_box table.list_check { margin-top: 16px; width: 100%; }
+#search_article_box table.list_check th { padding: 16px 0 10px; background: url(/common/images/header/border_hr_01.png) repeat-x 0 0; font-weight: bolder; }
+#search_article_box table.list_check td { padding-top: 4px; }
+
+#search_article_box .bt_submit { margin-top: 30px; text-align: center; }

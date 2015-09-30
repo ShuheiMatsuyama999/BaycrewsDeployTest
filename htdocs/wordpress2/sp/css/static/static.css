@@ -1,0 +1,118 @@
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+/* add 20131127*/
+.contents {
+	background: none;
+	padding: 0;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.detail .news {
+	margin-top: 0;
+}
+
+.detail .contents .post {
+	margin: 0;
+    -webkit-border-radius: 0;    /* Safari,Google Chrome用 */  
+    -moz-border-radius: 0;   /* Firefox用 */ 
+	border-radius: 0;        /* CSS3草案 */  
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.detail .inner {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/*
+.detail .inner img[width="250"] {
+	width: 100%;
+	height: auto;
+}
+*/
+
+.detail .news .title h2 {
+	color: #000;
+	background: url(../static/images/dot_x.gif) bottom left repeat-x;
+	padding: 20px 10px 20px 0;
+	margin:0 12px;
+	border-top: none;
+}
+
+.detail .from {
+	margin-top: 35px;	
+}
+
+/*ショップ詳細*/
+.hiLight .shopDetail {
+	border: none;
+	border-top: 2px solid #000;
+	border-radius: 0;
+	margin-bottom:25px;
+}
+
+.hiLight .shopDetail h5 {
+	padding: 15px 3px;
+	background: transparent url(../static/images/dot_x.gif) bottom left repeat-x;
+	color: #333333;	
+}
+
+.hiLight .shopDetail h5 span {
+	background: none;
+	padding-left: 0;
+}
+
+.hiLight .shopDetail h5 a {
+	color:#333333;
+}
+
+.hiLight .shopDetail .shopInfo {
+	padding-left: 3px;	
+}
+
+.hiLight .shopDetail dl dt {
+	margin-bottom: 0;
+	padding-top: 15px;
+	padding-bottom: 0;
+	border-bottom: none;
+	font-size: 14px;
+}
+.hiLight .shopDetail dl dt:first-child {
+	padding-top: 0;
+}
+
+.hiLight .shopDetail dl dd {
+	padding-left: 0;
+	background: transparent url(../static/images/dot_x.gif) bottom left repeat-x;
+}
+
+.hiLight .shopDetail dl dd:last-child {
+	background: none;
+	padding-bottom: 0;
+}
+
+.hiLight .shopDetail p.shopMoreLink,
+.hiLight .shopDetail p.otherShops {
+	text-align: left;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.hiLight .shopDetail p.shopMoreLink span,
+.hiLight .shopDetail p.otherShops span {
+	background: url(../static/images/arrow_02.png) left center no-repeat;
+	-webkit-background-size: 11px auto;
+	background-size:11px auto;
+}
+
+/*詳細リンク*/
+.inner p.wp-caption-text a.blank {
+color: #000;
+background: url(../static/images/point_blank.jpg) left center no-repeat;
+}
+
+/* add 20131127*/

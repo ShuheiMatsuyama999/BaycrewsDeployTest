@@ -1,0 +1,51 @@
+
+.detail .contents {
+	background: url(../images/lappartement/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #231815;
+	color: #231815;
+	background: url(../images/lappartement/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+
+/*ショップ詳細*/
+.hiLight .shopDetail {
+	border: 2px solid #231815;
+}
+
+.hiLight .shopDetail h5 {
+	color: white;
+	background: #231815;
+}
+
+.hiLight .shopDetail h5 a {
+	color: white;
+}
+
+
+.hiLight .shopDetail p.shopMoreLink {
+	background: url(../images/lappartement/dot_x.gif) top left repeat-x;
+}
+
+/*.hiLight .shopDetail p.shopMoreLink span,.hiLight .shopDetail p.otherShops span {
+	background: url(../images/lappartement/arrow_02.png) left center no-repeat;
+	-webkit-background-size: 11px auto;
+	background-size:11px auto;
+}
+
+.hiLight .shopDetail p.shopMoreLink span a,.hiLight .shopDetail p.otherShops span a {
+	color: #bb9664;
+}*/
+
+/*詳細リンク*/
+.inner p.wp-caption-text a.blank{
+color: #bb9664;
+background: url(../images/lappartement/point_blank.jpg) left center no-repeat;
+}

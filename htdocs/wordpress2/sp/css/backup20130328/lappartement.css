@@ -1,0 +1,22 @@
+.contents .news a { color:#bb9664!important; }
+.detail .contents {
+	background: url(../images/lappartement/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+	padding: 20px 0 0 0;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #231815;
+	color: #231815;
+	background: url(../images/lappartement/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+/*Ú×ƒŠƒ“ƒN*/
+.inner p.wp-caption-text a.blank{
+color: #bb9664;
+background: url(../images/lappartement/point_blank.jpg) left center no-repeat;
+}

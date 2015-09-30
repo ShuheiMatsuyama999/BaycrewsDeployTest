@@ -1,0 +1,775 @@
+/*aoki 追加*********************************************/
+
+var tmpWidth;
+function getTmpWidth(){
+	return tmpWidth;
+}
+function getObj(){
+	return this;
+}
+function resizeStartGlobal(obj, width) {
+		var _self = obj;		
+		rObj = new ResizeController();
+		rObj.resizeColumnSize(width, "animate");
+}
+/*aoki*********************************************/
+
+
+var Illust;
+Illust = (function() {
+  function Illust() {
+/*
+    this.pattern = ["/images/illust/il1.gif", "/images/illust/il2.gif", "/images/illust/il3.gif", "/images/illust/il4.gif", "/images/illust/il5.gif", "/images/illust/il6.gif", "/images/illust/il1.gif", "/images/illust/il2.gif", "/images/illust/il3.gif", "/images/illust/il4.gif", "/images/illust/il5.gif", "/images/illust/il6.gif"];
+*/
+    this.illustInputSize = 140;
+    this.leftWidth = 165;
+    this.subPadding = 10;
+    this.leftPadding = 22;
+    this.selectedIllust = [];
+  }
+
+/*
+  Illust.prototype.spaceCheck = function(d) {
+    if (d.currentIsDouble) {
+      if (d.currentLeft < d.compLeft) {
+        if (d.currentRight > d.compLeft) {
+          if (d.toCompHeight >= this.illustInputSize) {
+            return true;
+          }
+        }
+      }
+      if (d.comp.hasClass("double")) {
+        if (d.currentLeft === d.compLeft) {
+          if (d.toCompHeight >= this.illustInputSize) {
+            return true;
+          }
+        }
+      }
+    } else if (d.currentLeft >= d.compLeft) {
+      if (d.currentLeft <= d.compLeft + d.comp.width()) {
+        if (d.toCompHeight >= this.illustInputSize) {
+          return true;
+        }
+      }
+    }
+  };
+  Illust.prototype.hasElement = function(d) {
+    if (d.currentBottom < d.checkTop && d.compTop > d.checkTop) {
+      if (d.currentIsDouble) {
+        if (d.offsetForDouble + 20 >= d.checkLeft) {
+          if (d.offsetForDouble <= d.checkRightt) {
+            return true;
+          }
+        }
+        if (d.check.hasClass("double")) {
+          if (d.currentLeft === d.checkLeft) {
+            return true;
+          }
+        }
+      } else if (d.currentLeft >= d.checkLeft) {
+        if (d.currentLeft <= d.checkRightt) {
+          return true;
+        }
+      }
+      if (d.currentRight >= d.checkLeft) {
+        if (d.currentRight <= d.checkRightt) {
+          return true;
+        }
+      }
+    }
+  };
+  
+  
+  //koko
+  Illust.prototype.setIllust = function() {
+    var blocks, check, checkLeft, checkRightt, checkTop, checkWidth, comp, compLeft, compTop, current, currentBottom, currentHeight, currentIsDouble, currentLeft, currentRight, currentTop, currentWidth, data, hasTopRightCard, height, i, input, j, k, l, left, mainBlock, offsetForDouble, patternCount, toCompHeight, top;
+    //this.rightWall = $("#sub").offset().left - $("#main").offset().left - this.leftWidth - this.subPadding - this.leftPadding;
+    this.selectedIllust = [];
+    mainBlock = $("#mainBlock");
+    blocks = mainBlock.find(".block");
+    mainBlock.find(".illustAfterRender").replaceWith("");
+    patternCount = 0;
+    hasTopRightCard = 0;
+    l = blocks.length;
+    for (i = 0; 0 <= l ? i <= l : i >= l; 0 <= l ? i++ : i--) {
+      current = $(blocks.get(i));
+      currentLeft = this.pint(current.css("left"));
+      currentTop = this.pint(current.css("top"));
+      currentBottom = currentTop + current.height();
+      currentWidth = current.width();
+      currentRight = currentLeft + currentWidth;
+      currentHeight = current.height();
+      currentIsDouble = current.hasClass("double");
+      if (this.rightWall - 130 < currentLeft + currentWidth && currentTop < 100) {
+        hasTopRightCard = {
+          width: this.rightWall - currentLeft,
+          height: currentHeight,
+          left: currentLeft
+        };
+      }
+      for (j = i; i <= l ? j <= l : j >= l; i <= l ? j++ : j--) {
+        comp = $(blocks.get(j));
+        compLeft = this.pint(comp.css("left"));
+        compTop = this.pint(comp.css("top"));
+        toCompHeight = compTop - currentBottom;
+        data = {
+          currentIsDouble: currentIsDouble,
+          currentLeft: currentLeft,
+          currentRight: currentRight,
+          compLeft: compLeft,
+          comp: comp,
+          toCompHeight: toCompHeight
+        };
+        if (this.spaceCheck(data)) {
+          input = true;
+          for (k = 0; 0 <= l ? k <= l : k >= l; 0 <= l ? k++ : k--) {
+            if (k !== i && k !== j) {
+              check = $(blocks.get(k));
+              checkLeft = this.pint(check.css("left"));
+              checkTop = this.pint(check.css("top"));
+              checkWidth = check.width();
+              checkRightt = checkLeft + checkWidth;
+              offsetForDouble = currentLeft + Math.floor(currentWidth / 2);
+              data = {
+                currentIsDouble: currentIsDouble,
+                offsetForDouble: offsetForDouble,
+                checkLeft: checkLeft,
+                checkRightt: checkRightt,
+                check: check,
+                currentLeft: currentLeft,
+                currentRight: currentRight,
+                currentBottom: currentBottom,
+                compTop: compTop,
+                checkTop: checkTop
+              };
+              if (this.hasElement(data)) {
+                if (input) {
+                  input = false;
+                  break;
+                }
+              }
+            }
+          }
+          if (input) {
+            height = compTop - currentBottom;
+            top = currentTop + currentHeight;
+            left = currentLeft + 20;
+            if (currentIsDouble) {
+              left += Math.floor(currentWidth / 2);
+            }
+            patternCount = this.put({
+              height: height,
+              left: left,
+              top: top,
+              count: patternCount,
+              block: mainBlock
+            });
+          }
+          break;
+        }
+      }
+    }
+    if (hasTopRightCard === 0) {
+      this.put({
+        block: mainBlock,
+        left: this.rightWall - 150,
+        top: 0,
+        height: 200,
+        count: patternCount
+      });
+    }
+    return $(".illustAfterRender").fadeIn(200);
+  };
+  
+  */
+  
+  
+  
+  
+  Illust.prototype.put = function(data) {
+    var padding;
+    if (data.count < this.pattern.length) {
+/*       padding = Math.floor(data.height / 2) - 60;
+      data.block.append("<div class=\"illustAfterRender\" style=\"display:none;position: absolute;left:" + (data.left + 10) + "px;top:" + (data.top + padding) + "px;z-index:-1;\">\n\                <img src=\"" + this.pattern[this.getNextIllustIndex()] + "\" />\n\                </div>");
+ */    }
+    return data.count + 1;
+  };
+  Illust.prototype.putOne = function(data) {
+/*     var padding;
+    padding = Math.floor(data.height / 2) - 60;
+    data.block.append("<div class=\"illustAfterRender\" style=\"display:none;position: absolute;left:" + (data.left + 10) + "px;top:" + (data.top + padding) + "px;z-index:-1;\">\n\            <img src=\"" + this.pattern[this.getNextIllustIndex()] + "\" />\n\            </div>");
+ */    return data.count + 1;
+  };
+  Illust.prototype.getNextIllustIndex = function() {
+    var does, i, low, ok, rand, up, _ref;
+    does = true;
+    while (does) {
+      low = 0;
+      up = this.pattern.length - 1;
+      rand = Math.floor((up - low + 1) * Math.random() + low);
+      ok = true;
+      for (i = 0, _ref = this.selectedIllust.length; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+        if (this.selectedIllust[i] === rand) {
+          ok = false;
+        }
+      }
+      if (ok) {
+        this.selectedIllust.push(rand);
+        does = false;
+      }
+    }
+    return rand;
+  };
+  Illust.prototype.pint = function(string) {
+    if (string) {
+      string = string.replace("px", "");
+    }
+    return parseInt(string, 10);
+  };
+  return Illust;
+})();
+
+function ResizeController() {
+    var _self = this;
+
+    _self.header = 34;
+    _self.heightPadding = 10;
+    _self.bottomHeightPadding = 22;
+
+    _self.pagePadding = 100;
+    _self.subPadding = 0;
+    _self.leftPadding = 0;
+    _self.subWidth = 0;
+    _self.leftWidth = 0;
+    _self.block = 245;
+
+    _self.minBlockSize = 4;
+
+    _self.blockSpeed = 0;
+    _self.speed = 0;
+    _self.speedWrapp = 0;
+
+    _self.windowSizeChanging = false;
+    _self.targetWidth = 0;
+
+    _self.firstResize = function(width) {
+        var _self = this;
+        _self.resizeColumnSize(width);
+    }
+
+
+/*aoki 追加*********************************************/
+
+		_self.resize = function(width) {
+			tmpWidth = width;
+			resizeStart(this, width);
+		}
+		function resizeStart(obj, width) {
+			var _self = obj;
+			_self.resizeColumnSize(width, "animate");
+			
+			
+			
+		}
+
+/*aoki*********************************************/
+
+
+/*aoki 削除*********************************************/
+
+/*
+    _self.resize = function(width) {
+        var _self = this;
+        _self.resizeColumnSize(width, "animate");
+    }
+*/
+
+/*aoki*********************************************/
+
+
+    _self.resizeColumnSize = function(width, type){
+        width=960;
+        var _self = this;
+
+        if(_self.windowSizeChanging==false){
+            _self.windowSizeChanging=true;
+
+            var blockCnt = _self.getInnerColumnSize(width);
+            var nextContainerWidth = _self.block * blockCnt + _self.leftWidth + _self.subWidth + _self.leftPadding + _self.subPadding -20 +"px";
+
+            if(type=="quick"){
+                $('#container').css(
+                    new Object({"width":nextContainerWidth}));
+                _self.resizeInnerColumns(blockCnt,"first");
+                _self.windowSizeChanging = false;
+
+            }else{
+                $('#container').animate(
+                    new Object({"width":nextContainerWidth}),_self.speed+_self.speedWrapp,function(){
+                    _self.resizeInnerColumns(blockCnt,"other");
+                    _self.windowSizeChanging = false;
+                    setTimeout(putIllust,_self.blockSpeed);
+                });
+            }
+        }
+    }
+
+
+    _self.getInnerColumnSize = function(width){
+        var _self = this;
+
+        var blockArea = (width-_self.pagePadding) - _self.subPadding - _self.leftPadding - _self.subWidth - _self.leftWidth;
+        var blockCnt = Math.floor(blockArea / _self.block);
+        if (blockCnt < _self.minBlockSize) {
+            blockCnt = _self.minBlockSize;
+        }
+
+        return blockCnt;
+    }
+
+    _self.addPointsSortByHeight = function(points){
+        var working;
+        var rs = new Array();
+        for(var i=0 ; i < points.length ; i++){
+            if(points[i] == "unset"){
+            }else{
+                rs.push(points[i]);
+            }
+        }
+
+        for(i=0 ; i < rs.length - 1 ; i++){
+            for(var j=rs.length-1;j>i;j--){
+                if(rs[j].height < rs[j-1].height){
+                    working = rs[j];
+                    rs[j] = rs[j-1];
+                    rs[j-1] = working;
+                }else if(rs[j].height == rs[j-1].height && rs[j].column < rs[j-1].column){
+                    working = rs[j];
+                    rs[j] = rs[j-1];
+                    rs[j-1] = working;
+                }
+            }
+        }
+
+
+/* catName 幅可変 shimoyamada 追記 */
+
+		//alert( ($("#contents").width()) - ($("#sub").width()+10));
+		var mainW = $("#contents").width();
+		var blockNum = Math.floor(mainW/245);
+		//alert(blockNum);
+		
+/* 		var t1 = ".catName"
+		$(t1).css("width",(245*blockNum) + 20*(blockNum-1));
+		var ww = $(t1).width();
+ */
+
+ 		$(".listPage .block .section").css("width",mainW-5);
+		$(".moreLink .section").css("width",mainW-4);
+		$(".smallblock .moreLink .section").css("width",mainW-5);
+		$(".footerInner").css("width",mainW-5);
+		
+/* 追記 */
+
+        return rs;
+    }
+
+    _self.getMaxHeightOfAddPoints = function(points){
+        var max = 0;
+        for(var i=0 ; i < points.length ; i++){
+            if(points[i].height > max){
+                max = points[i].height;
+            }
+        }
+
+        return max;
+    }
+    _self.getMaxPoint = function(points){
+        var max = 0;
+        for(var i=0 ; i < points.length ; i++){
+            if(points[i].height > max){
+                max = i;
+            }
+        }
+
+        return max;
+    }
+
+    _self.getMaxRightPoint = function(points){
+        var max = _self.getMaxPoint(points);
+        for(var i=0 ; i < points.length ; i++){
+            if(points[i].column > points[max].column &&
+                    points[i].height > 0){
+//                if(points[i].height > points[max].height){
+                    max = i;
+//                }
+            }
+        }
+
+        return max;
+    }
+
+    _self.resizeInnerColumns = function(size,type){
+        var _self = this;
+        var addPoints = new Array(new Object({column:1,height:0,size:2}));
+
+        var mainBlock = $("#mainBlock");
+        var blockOrder1 = mainBlock.find(".block.order1");
+        var blockOrder2 = mainBlock.find(".block.order2");
+
+/*
+
+        if(blockOrder1.length > 0){
+            var order1Card = blockOrder1.get(0);
+
+            var myAddPoint = addPoints[0];
+            var myColumn = myAddPoint.column;
+            var myHeight = myAddPoint.height;
+
+            var nextRight = new Object({
+                column:myColumn+_self.mySize(order1Card),
+                height:myHeight,
+                size:2
+            });
+            var nextBottom = new Object({
+                column : myColumn,
+                height : myHeight + $(order1Card).height() + _self.heightPadding,
+                size:2
+            });
+
+            if(blockOrder2.length > 0){
+                addPoints[0] = nextBottom;
+                addPoints.push(nextRight);
+
+            }else{
+                addPoints[0] = nextRight;
+                addPoints.push(nextBottom);
+
+            }
+        }
+
+        if(blockOrder2.length > 0){
+            var order2Card = blockOrder2.get(0);
+            myAddPoint = addPoints[0];
+            myColumn = myAddPoint.column;
+            myHeight = myAddPoint.height;
+
+            $(order2Card).animate(new Object({
+                "left":((myColumn-1)*_self.block)+"px",
+                "top":myHeight+"px"
+            }),_self.blockSpeed);
+
+            nextRight = new Object({
+                column:myColumn+_self.mySize(order2Card),
+                height:myHeight,
+                size:2
+            });
+            nextBottom = new Object({
+                column : myColumn,
+                height : myHeight + $(order2Card).height() + _self.heightPadding,
+                size:2
+            });
+            if(blockOrder1.length){
+                addPoints[0] = "unset";
+            }else{
+                addPoints[0] = nextRight;
+            }
+            addPoints.push(nextBottom);
+        }
+*/
+
+        addPoints = _self.addPointsSortByHeight(addPoints);
+
+        var card;
+        var mySize;
+        var working;
+        var compAddPoint;
+        var compColumn;
+        var compHeight;
+
+
+        var eachBlocks = mainBlock.find(".block").not(".order1,.order2,.pagenate");
+
+        var l = eachBlocks.length;
+        for(var i=0; i< l; i++){
+
+            card = eachBlocks.get(i);
+            mySize = _self.mySize(card);
+
+            for(var pointIndex = 0 ; pointIndex < addPoints.length ; pointIndex++){
+
+                myAddPoint=addPoints[pointIndex];
+                myColumn = myAddPoint.column;
+                myHeight = myAddPoint.height;
+
+                for(var pointIndex2 = pointIndex ; pointIndex2 < addPoints.length ; pointIndex2++){
+                    compAddPoint = addPoints[pointIndex2];
+                    compColumn = compAddPoint.column;
+                    compHeight = compAddPoint.height;
+
+                    if( compColumn==myColumn+1 && compHeight > myHeight){
+
+                        addPoints[pointIndex].size=1;
+                        if(mySize >= 2){
+                            working = addPoints[pointIndex];
+                            working.height = compHeight;
+                            working.size=2;
+
+                            addPoints[pointIndex2] = working;
+                            addPoints[pointIndex] = "unset";
+                        }
+                    }
+                }
+
+
+                if(addPoints[pointIndex]!="unset" && (myColumn - 1) + mySize <= size ){
+
+                    addPoints = _self.moveElement(card, size, addPoints, pointIndex);
+                    break;
+                }
+
+            }
+            addPoints = _self.addPointsSortByHeight(addPoints);
+
+        }
+
+        var blockPagenate = mainBlock.find(".pagenate.block");
+		
+/*
+        if(blockPagenate.length > 0){
+            var pagenateCard = blockPagenate.eq(0);
+            var pagenateIndex = _self.getMaxRightPoint(addPoints);
+            var pagenateHeight = _self.getMaxHeightOfAddPoints(addPoints)+2;
+
+            pagenateCard.animate(new Object({
+                "left":((size-1)*_self.block)+"px",
+                "top": pagenateHeight +"px"
+            }),_self.blockSpeed);
+
+        }
+*/
+
+        var height = _self.getMaxHeightOfAddPoints(addPoints);
+        if(height > $("#leftBlockArea").height())
+            $("#main").height(height);
+        else
+            $("#main").height($("#leftBlockArea").height());
+
+
+
+	}
+
+
+    _self.moveElement = function(card, size, addPoints, pointIndex){
+        var _self = this;
+
+        var myAddPoint=addPoints[pointIndex];
+        var myColumn = myAddPoint.column;
+        var myHeight = myAddPoint.height;
+        var mySize = _self.mySize(card);
+        
+        $(card).animate(new Object({
+            "left":((myColumn-1)*_self.block)+"px",
+            "top":myHeight+"px"
+        },"easeOutQuint"),800);
+
+
+        var nextRight = new Object({
+            column:myColumn+mySize,
+            height:myHeight,
+            size:2
+        });
+
+        var nextBottom = new Object({
+            column : myColumn,
+            height : myHeight + $(card).height() + _self.heightPadding,
+            size:2
+        });
+
+        var nextHeight = myHeight + $(card).height() + _self.heightPadding;
+        var nextColumn = myColumn + mySize -1;
+        for(var pointIndex2 = 0 ; pointIndex2 < addPoints.length ; pointIndex2++){
+
+            var compAddPoint = addPoints[pointIndex2];
+            var compColumn = compAddPoint.column;
+            var compHeight = compAddPoint.height;
+
+            if((
+                    pointIndex2 != pointIndex &&
+                    compColumn >= myColumn &&
+                    compColumn <= nextColumn
+
+                )&& (( compHeight < myHeight) || (
+                        compHeight >= myHeight &&
+                        compHeight < nextHeight
+                ))
+            ){
+                addPoints[pointIndex2] = "unset";
+            }
+
+            if( compColumn==nextRight.column && compHeight >= nextRight.height){
+                nextRight = "unset";
+            }
+
+            if(compColumn == nextBottom.column && compHeight == nextBottom.height){
+                nextBottom = "unset";
+            }
+
+        }
+
+        if(nextRight.column > size){
+            addPoints[pointIndex] = "unset";
+            nextBottom.size=1;
+        }else{
+            addPoints[pointIndex] = nextRight;
+        }
+        addPoints.push(nextBottom);
+
+        return addPoints;
+    }
+
+
+    _self.mySize = function(element){
+        var _self = this;
+
+        return Math.round($(element).width()/_self.block);
+    }
+
+}
+
+/*
+function moveElementFunc(i,left,top,speed){
+    var mainBlock = $("#mainBlock");
+    var element = mainBlock.find(".block").not(".order1,.order2").get(i);
+    $(element).animate({left:left+"px",top:top+"px"},speed);
+}
+function Loading(){
+    var _self = this;
+
+    _self.endLoading = function (){
+        $("#loadingPanel").fadeOut(500);
+    }
+
+}
+function endLoading(){
+    $("#loadingPanel").fadeOut(500);
+}
+*/
+
+
+var myResize = new ResizeController();
+var oldWidth = 0;
+var illust = new Illust();
+//var load = new Loading();
+    var loadCounter = 0;
+
+//$("#loadingPanel").ready(function(){
+//    var _self = window;
+//    _self.load.startLoading();
+//});
+
+function resize(){
+    var width = $('html').outerWidth();
+    var _self = window;
+
+    if(_self.oldWidth != width){
+        _self.oldWidth = width;
+        _self.myResize.resize(width);
+
+
+	}
+}
+
+function putIllust(){
+    var _self = window;
+    //_self.illust.setIllust();
+}
+
+/* 追加 moreをクリックで新しい記事を読み込み、リサイズ */
+var moreFunc = function(){
+	var thisPage = "";
+	var loadFlag = false;
+	var articleBaseNum = 0;
+	var $btns = $(".moreLink:first ul.alpha li");
+
+	
+	$('.moreLink:first ul.alpha li').click(function() {
+		if(!loadFlag){
+			loadFlag = true;
+			$btns.eq(0).find(".blockInner:first a:first img:first").attr("src", "/images/ajax-loader.gif");
+			
+			var loaderFunc = function(){
+				var urlVal = $btns.eq(0).find(".blockInner:first a:first").attr("href");
+				$('.moreLink:first').before("<div id='wrapDiv'></div>")
+				$("#wrapDiv").load(urlVal,"",function(){
+					$('.moreLink:first').before($("#wrapDiv .block"));
+					$("#wrapDiv").remove();
+
+					if(parseInt($(".block").length) - 1 >= 100){
+						$('.moreLink:first').remove();
+					}
+					
+					var width = $('html').outerWidth();
+					window.myResize.resize(width);
+
+					$btns.eq(0).remove();
+					$btns = $(".moreLink:first ul.alpha li");
+					if($btns.length > 0){
+						$btns.eq(0).css({
+							display:"block"
+						})
+					}
+					loadFlag =false;
+				});
+			}
+			loaderFunc();
+		}
+		return false;
+	});
+}
+
+$(document).ready(function() {
+    var images = $("#mainBlock .block .pic img");
+    var _self = window;
+
+    try {
+        var l = images.length;
+        for(var i=0; i< l; i++){
+            var img = images[i];
+
+            img.onload = function(){
+                _self.loadCounter++;
+                if(images.length-1 <= _self.loadCounter)
+                    _self.endLoading();
+            };
+            $(img).load(function(){
+                _self.loadCounter++;
+                if(images.length-1 <= _self.loadCounter)
+                    _self.endLoading();
+            });
+            $(img).error(function(){
+                _self.loadCounter++;
+                if(images.length-1 <= _self.loadCounter)
+                    _self.endLoading();
+            });
+        }
+    }catch(e) {
+        _self.endLoading();
+    }
+	
+	/* more部分の動き */
+	moreFunc();
+
+
+//    setTimeout(function(){
+//        _self.endLoading();
+//    }, 600);
+
+    //_self.myResize.firstResize($('html').outerWidth());
+    $(".moreLink").hide();
+
+	setTimeout(_self.resize, 10);
+	setTimeout(function(){$(".moreLink").fadeIn()}, 50);
+
+    setInterval(_self.resize, 1000);
+});

@@ -1,0 +1,23 @@
+Options -Indexes
+<Files ~ "(makeAtom\.php|deletedStatic\.php|\.htaccess|\.htpasswd)">
+AuthUserFile /home/blog.baycrews.co.jp/htdocs/sp/cache/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Please enter your ID and password"
+AuthType Basic
+require valid-user 
+order deny,allow
+</Files>
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+
+
+# REWRITE
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} ^/sp/cache/tmp/.*/([0-9]+)\.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule tmp/(.*)/([0-9]+).html makeStatic.php?brand=$1&id=$2

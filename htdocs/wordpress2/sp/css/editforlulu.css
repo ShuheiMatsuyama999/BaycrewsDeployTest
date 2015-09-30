@@ -1,0 +1,50 @@
+.detail .contents {
+	background: url(../images/editforlulu/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #003559;
+	color: #003559;
+	background: url(../images/editforlulu/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+
+/*ショップ詳細*/
+.hiLight .shopDetail {
+	border: 2px solid #003559;
+}
+
+.hiLight .shopDetail h5 {
+	color: white;
+	background: #003559;
+}
+
+.hiLight .shopDetail h5 a {
+	color: white;
+}
+
+
+.hiLight .shopDetail p.shopMoreLink {
+	background: url(../images/editforlulu/dot_x.gif) top left repeat-x;
+}
+
+/*.hiLight .shopDetail p.shopMoreLink span,.hiLight .shopDetail p.otherShops span{
+	background: url(../images/editforlulu/arrow_02.png) left center no-repeat;
+	-webkit-background-size: 11px auto;
+	background-size:11px auto;
+}
+
+.hiLight .shopDetail p.shopMoreLink span a,.hiLight .shopDetail p.otherShops span a {
+	color: #003559;
+}*/
+
+/*詳細リンク*/
+.inner p.wp-caption-text a.blank{
+color: #003559;
+background: url(../images/editforlulu/point_blank.jpg) left center no-repeat;
+}

@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* innerContent
+------------------------------------------------------------------------------*/
+.article h2{
+	margin:0 0 7px 0;
+	padding:5px 0 7px 0;
+	font-size:1.667em;
+	font-weight:bold;
+	border-bottom:1px solid #e0d6d5;
+}
+.article p.date{
+	text-align:right;
+}
+.articleContents{
+	margin:0 0 7px 0;
+	padding:0 0 25px 0;
+	border-bottom:1px solid #e0d6d5;
+}
+.articleContents p{
+	line-height:1.4;
+	padding:25px 0 0 0;
+}
+.articleContents img{
+	padding:25px 0 0 0;
+}
+.articleContents span{
+	display:block;
+	font-weight:bold;
+	padding:0 0 3px 0;
+}
+.articleContents span img{
+	padding:0 5px 0 0;
+}
+.articleFooter{
+	margin:0 0 40px 0;
+}
+.articleFooter ul{
+	float:left;
+}
+.articleFooter ul li{
+	display:block;
+	float:left;
+	width:90px;
+}
+.articleFooter ul li iframe{
+	float:left;
+	width:90px;
+}
+.articleFooter p.date{
+	float:right;
+	margin:5px 0 0 0;
+}
+.footerContent{
+}
+.footerContent ul{
+	margin:0 0 40px 0;
+	padding:5px 10px;
+}
+.footerContent ul li{
+	padding:10px 0;
+	background:url(../images/dot_x.jpg) bottom left repeat-x;
+}
+.footerContent ul li a{
+	display:block;
+	padding:0 0 0 20px;
+	background:url(../images/arrow_grey.jpg) 0 2px no-repeat;
+	color:#383332;
+	text-decoration:none;
+}
+.footerContent ul.comments{
+	margin:0 0 10px 0;
+	*margin-bottom:0!important;
+	*padding-bottom:0!important;
+}
+.footerContent ul.comments li dl dt{
+	font-size:0.924em;
+	padding:0 0 2px 0;
+}
+.footerContent ul.comments li dl dd span{
+	display:block;
+	padding:3px 0 0 0;
+	font-size:0.917em;
+	color:#5f5f5f;
+}
+.commentForm{
+	padding:0 10px;
+}
+.commentForm dt{
+	font-size:0.924em!important;
+	padding:0 0 5px 0!important;
+}
+.commentForm table td{
+	padding:0 0 5px 0;
+}
+.commentForm table td p{
+	font-size:0.834em;
+	padding:0 0 3px 0;
+}
+.commentForm table td input,
+.commentForm table td textarea{
+	width:202px;
+	padding:3px;
+	border:1px solid #cbc9c1;
+}
+.commentForm table td textarea{
+	margin:10px 0;
+	font-size:1em;
+	width:414px;
+}
+.commentForm table td.submit{
+	text-align:right;
+}
+.commentForm table td.submit input{
+	width:auto;
+	padding:0;
+	border:0;
+}
+
+
+/* category
+------------------------------------------------------------------------------*/
+.catName .blockInner{
+	padding:8px 10px 8px 0;
+}
+.catName .blockInner h2{
+	padding:20px;
+	color:#383332;
+	font-size:1.834em;
+	font-weight:bold;
+	line-height:1;
+	border-left:5px solid #f7a595;
+}

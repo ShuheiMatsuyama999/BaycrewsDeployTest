@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-language" content="ja" />
+<meta name="robots" content="noindex, nofollow" />
+<title>bcs ヘッダテスト</title>
+<!-- <link rel="stylesheet" type="text/css" media="screen,print" href="/common/css/hogehoge.css" /> -->
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/common/js/jquery.set_weather_api.js"></script>
+<script type="text/javascript" src="/common/js/jquery.header_enhancer.js"></script>
+<!-- <script type="text/javascript" src="/common/js/jquery.custom_form.js"></script> -->
+
+<style type="text/css">
+.active{ color:#f00; }
+.hidden-elemdddd{ display:none; }
+</style>
+</head>
+<body>
+<h1>都道府県のクッキーを変える</h1>
+
+<p><a href="/index_cording_test.html">クッキーセット</a>
+<!-- ローカル環境ではこちらで <a href="/index_cording_test.html">クッキーセット</a> -->
+<!--  | <a href="delcookie.php">クッキークリア</a> -->
+ | <a href="viewcookie.php">クッキーを確認</a></p>
+
+
+<hr />
+
+<!-- 
+
+各要素のid,nameはできるだけ保持してください
+変更する場合は共有お願いします。
+
+▼OK
+<p>最低気温：　<span id="ajaxMinC">0</span>度</p>
+<p>最高気温：　<span id="ajaxMaxC">0</span>度</p>
+を
+<div class="weatherBox">
+<ul>
+<li id="ajaxMinC"><img src="/common/images/num_0.gif" alt="0" /></li>
+<li id="ajaxMaxC"><img src="/common/images/num_0.gif" alt="0" /></li>
+</ul>
+</div>
+
+
+▼NG
+<p>最低気温：　<span id="ajaxMinC">0</span>度</p>
+を
+<div class="weatherBox">
+<ul>
+<li id="aaaaaaaaaaaaaaaaaaaaa">0</li>
+</ul>
+</div>
+
+idが無くなってしまうと駄目
+
+----------------------------------------------------------------------
+
+■20120420メモ
+Javascriptで値が変更できなくなってしまいます
+以下、使用中のid
+
+ajaxWeatherEight
+ajaxWeatherThree
+prevWeather
+nextWeather
+ajaxMinC
+ajaxMaxC
+ajaxaverageTemp
+ajaxTemperature
+ajaxStyle
+pref-hidden
+weather-hidden
+temperature-hidden
+style-hidden
+
+すみませんほぼ全部でした。
+
+-->
+
+
+
+
+<h1>天気部分</h1>
+
+<div id="header">
+<form method="post" action="posttest.php" id="weatherForm">
+
+<p>地域：　<span id="ajaxPref">tokyo</span></p><!-- ajaxPref　の中みは使いそう -->
+<p>天気コード：　8種類＝<span id="ajaxWeatherEight">A</span>　-　3種類＝<span id="ajaxWeatherThree">fine</span></p><!-- 表示確認用にとりあえず出してるだけです -->
+
+<ul id="listWeather">
+<li rel="A" class="active">A</li>
+<li rel="B">B</li>
+<li rel="C">C</li>
+<li rel="D">D</li>
+<li rel="E">E</li>
+<li rel="F">F</li>
+<li rel="G">G</li>
+<li rel="H">H</li>
+</ul><!-- [js] とりあえずrel と #weather-hidden の連携だけは施策してみました -->
+<p><a href="dummy" id="prevWeather">＜前</a> | <a href="dummy" id="nextWeather">次＞</a></p>
+
+
+<p>最低気温：　<span id="ajaxMinC">0</span>度</p><!-- ajaxMinC　の中みは使いそう -->
+<p>最高気温：　<span id="ajaxMaxC">0</span>度</p><!-- ajaxMaxC　の中みは使いそう -->
+<p>平均気温：　<span id="ajaxaverageTemp">0</span>度</p><!-- 表示確認用にとりあえず出してるだけです -->
+
+
+<p>フィーリング（↓まだ連携してません）：　APIからのデータは　<span id="ajaxTemperature">warm</span>　です。</p><!-- 表示確認用にとりあえず出してるだけです -->
+<ul id="ajaxTemperature-sasikaete-ne">
+<li rel="ex_cold">とても寒い</li>
+<li rel="cold">寒い</li>
+<li rel="cool">涼しい</li>
+<li rel="warm" class="active">暖かい</li>
+<li rel="hot">暑い</li>
+<li rel="heat">とても暑い</li>
+</ul><!-- [js] rel と #temperature-hiddenの連携、デフォルト表示設定が必要 -->
+
+
+<p>スタイル（↓まだ連携してません）：　デフォルトは　<span id="ajaxStyle">style01</span>　です。</p><!-- 表示確認用にとりあえず出してるだけです -->
+<ul id="ajaxStyle-sasikaete-ne">
+<li rel="style01" class="active">style01</li>
+<li rel="style02">style02</li>
+<li rel="style03">style03</li>
+<li rel="style04">style04</li>
+<li rel="style05">style05</li>
+<li rel="style06">style06</li>
+</ul><!-- [js] rel と #style-hiddenの連携、デフォルト表示設定が必要 -->
+
+
+<!-- 実際にPOSTされるhiddenはこちら -->
+<input type="hidden" id="pref-hidden" name="pref" value="tokyo" />
+<input type="hidden" id="weather-hidden" name="weather" value="fine" />
+<input type="hidden" id="temperature-hidden" name="temperature" value="warm" />
+<input type="hidden" id="style-hidden" name="style" value="style01" />
+
+<input type="submit" name="submit" value="テストPOST" />
+</form>
+
+
+
+
+<textarea rows="10" cols="100">●都道府県クッキーがない場合
+・とりあえずtokyoでAJAXする
+
+●ありえないクッキー（48番以降やら0、マイナスの数など）を持っていた場合
+・とりあえずtokyoでAJAXする
+
+●AJAXに失敗した場合
+・晴れ
+・0度
+・tokyo
+・warm
+</textarea>
+
+
+
+
+<hr />
+
+
+
+
+<h1>チェックボックス部分</h1>
+
+<form method="post" action="posttest.php" id="brandSearchForm">
+<ul id="brandSearchList">
+<li><span>全て</span><input id="brandall" class="hidden-elem" type="checkbox" name="brand[]" value="全て" /></li>
+<li class="active"><span>ブランド01</span><input id="brand01" class="hidden-elem" type="checkbox" name="brand[]" value="ブランド01" /></li>
+<li><span>ブランド02</span><input id="brand02" class="hidden-elem" type="checkbox" name="brand[]" value="ブランド02" /></li>
+</ul>
+
+
+<input type="submit" name="submit" value="テストPOST" />
+</form>
+
+
+
+
+<!-- header --></div>
+
+</body>
+</html>

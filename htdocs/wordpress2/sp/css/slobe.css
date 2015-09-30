@@ -1,0 +1,51 @@
+
+.detail .contents {
+	background: url(../images/slobe/cat_bg.gif) repeat;
+	-webkit-background-size: 80px 80px;
+}
+.detail .news .title {
+	padding: 0 0 10px 0;
+}
+
+.detail .news .title h2 {
+	border-top: 2px solid #e1d8c0;
+	color: #e1d8c0;
+	background: url(../images/slobe/dot_x.gif) bottom left repeat-x;
+	padding: 10px 10px 10px 5px;
+	margin:0 10px;
+}
+
+/*ショップ詳細*/
+.hiLight .shopDetail {
+	border: 2px solid #e1d8c0;
+}
+
+.hiLight .shopDetail h5 {
+	color: white;
+	background: #e1d8c0;
+}
+
+.hiLight .shopDetail h5 a {
+	color: white;
+}
+
+
+.hiLight .shopDetail p.shopMoreLink {
+	background: url(../images/slobe/dot_x.gif) top left repeat-x;
+}
+
+/*.hiLight .shopDetail p.shopMoreLink span,.hiLight .shopDetail p.otherShops span {
+	background: url(../images/slobe/arrow_02.png) left center no-repeat;
+	-webkit-background-size: 11px auto;
+	background-size:11px auto;
+}
+
+.hiLight .shopDetail p.shopMoreLink span a,.hiLight .shopDetail p.otherShops span a {
+	color: #3b3630;
+}*/
+
+/*詳細リンク*/
+.inner p.wp-caption-text a.blank{
+color: #3b3630;
+background: url(../images/slobe/point_blank.jpg) left center no-repeat;
+}
